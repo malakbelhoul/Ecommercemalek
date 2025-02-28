@@ -1,19 +1,20 @@
 const express=require('express') 
 const mongoose=require('mongoose') 
 const dotenv=require('dotenv')
-
+const cors=require('cors')
 const app=express()
 const CategorieRouter =require("./routes/categorie.route")
 const ScategorieRouter =require("./routes/scategorie.route")
 const articleRouter =require("./routes/article.route")
 app.use(express.json())
+app.use(cors())
 dotenv.config()
 
 app.get('/',(req,res) =>{
     res.send("wooooooooooohooooooooo")
 })
 
-mongoose.connect(process.env.DATABASE)
+mongoose.connect(process.env.DATABASECLOUD)
 .then(()=>{console.log("connexion a la base de donnees est reussie")})
 .catch((error)=>{console.log("imposible de connecte a la base de donnee",error)
     process.exit()
@@ -24,3 +25,4 @@ app.use('/api/articles', articleRouter);
 app.listen(process.env.PORT,function(){
     console.log("server is listen on port 4000")
 })
+module.exports = app;
