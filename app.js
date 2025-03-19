@@ -17,7 +17,7 @@ app.get('/',(req,res) =>{
     res.send("bd")
 })
 
-mongoose.connect(process.env.DATABASE)
+mongoose.connect(process.env.DATABASECLOUD)
 .then(()=>{console.log("connexion a la base de donnees est reussie")})
 .catch((error)=>{console.log("imposible de connecte a la base de donnee",error)
     process.exit()
