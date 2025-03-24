@@ -13,15 +13,10 @@ const path = require('path');
 app.use(express.json())
 app.use(cors())
 dotenv.config()
-/*
-app.get("/",(req,res)=>{
-res.send("page accueil")
-})
-*/
 
-app.get('/',(req,res) =>{
-    res.send("bienvenue")
-})
+// app.get('/',(req,res) =>{
+//     res.send("bienvenue")
+//  })
 
 mongoose.connect(process.env.DATABASECLOUD)
 .then(()=>{console.log("connexion a la base de donnees est reussie")})
