@@ -20,7 +20,7 @@ res.send("page accueil")
 */
 
 app.get('/',(req,res) =>{
-    res.send("bd")
+    res.send("bienvenue")
 })
 
 mongoose.connect(process.env.DATABASECLOUD)
